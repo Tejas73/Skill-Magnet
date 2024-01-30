@@ -1,4 +1,4 @@
-Skill Magnet
+# Skill Magnet
 Skill Magnet is a web application designed for course selling and learning. This platform enables users to explore, buy, and sell online courses, creating a vibrant community of learners and educators.
 
 Features
