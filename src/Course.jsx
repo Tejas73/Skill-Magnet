@@ -29,7 +29,7 @@ function Course() {
     // }, [])
     const fetchData = async () => {
         try {
-            const res = await axios(`${BASE_URL}/admin/courses/${courseId}`, {
+            const res = await axios.get(`${BASE_URL}/admin/courses/${courseId}`, {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 }

@@ -129,10 +129,11 @@ router.get('/courses', adminAuthenticateJwt, async (req, res) => {
     }
 });
 
+//to delete the course
 router.delete('/courses/:courseId', adminAuthenticateJwt, async (req, res) => {
     const courseId = req.params.courseId;
     try {
-        const deleteCourse = await Course.findByIdAndRemove(courseId);
+        const deleteCourse = await Course.findByIdAndDelete(courseId);
 
         if (deleteCourse) {
             res.status(200).json({ message: "Course deleted successfully" });

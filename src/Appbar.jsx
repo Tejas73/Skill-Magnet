@@ -2,13 +2,11 @@ import React from "react";
 import { Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { userEmailState } from "./store/selectors/userEmail";
-import { isUserLoading } from "./store/selectors/isLoading";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { userState } from "./store/atoms/user";
 
 function Appbar() {
     const navigate = useNavigate();
-    const userLoading = useRecoilValue(isUserLoading);
     const userEmail = useRecoilValue(userEmailState);
     const setUser = useSetRecoilState(userState);
 
