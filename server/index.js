@@ -3,16 +3,16 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const userRouter=require("./routes/user");
 const adminRouter=require("./routes/admin");
+require('dotenv').config();
 
 const app = express();
-// unnecessary cooommmmeennnnttt
 app.use(cors());
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 
 // Connection URL for the MongoDB database
-const dbURL = 'mongodb+srv://TejasTech:lGzWKViaNTXdNr3c@cluster0.jvmlnkq.mongodb.net/';
+const dbURL = process.env.MONGODB_URI;
 
 // Options for connecting to the database
 const connectOptions = {

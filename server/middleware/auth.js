@@ -1,27 +1,8 @@
 const jwt = require('jsonwebtoken');
-const userSecKey = 'us035kj3er';
-const adminSecKey = 'ad035kj3min';
+require('dotenv').config();
+const userSecKey = process.env.USER_SECRET_KEY;
+const adminSecKey = process.env.ADMIN_SECRET_KEY;
 
-//original code
-// const authenticateJwt = (secretKey, req, res, next) => {
-//     const authHeader = req.headers.authorization;
-//     if (authHeader) {
-//         const token = authHeader.split(' ')[1];
-//         jwt.verify(token, secretKey, (err, user) => {
-//             if (err) {
-                
-//                 console.log("Response data", err);
-//                 return res.sendStatus(403);
-//             }
-//             req.user = user;
-//             next();
-//         });
-//     } else {
-//         res.sendStatus(401);
-//     }
-// };
- 
-//ChatGPT code
 const authenticateJwt = (secretKey, req, res, next) => {
     console.log()
     const authHeader = req.headers.authorization;
