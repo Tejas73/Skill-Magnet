@@ -5,7 +5,7 @@ import Login from './Login.jsx';
 import Courses from './Courses.jsx';
 import Course from './Course.jsx';
 import Landing from './Landing.jsx';
-import AddCourse from './Addcourse.jsx';
+import AddCourse from './AddCourse.jsx';
 import { useSetRecoilState } from 'recoil';
 import axios from 'axios';
 import { BASE_URL } from './config.js';
