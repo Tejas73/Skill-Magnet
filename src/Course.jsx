@@ -15,18 +15,6 @@ function Course() {
     const setCourse = useSetRecoilState(courseState);
     const courseLoading = useRecoilValue(isCourseLoading);
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const res = await axios(`${BASE_URL}/admin/courses/${courseId}`, {
-    //             headers: {
-    //                 'Authorization': 'Bearer ' + localStorage.getItem('token')
-    //             }
-    //         })
-
-    //         setCourse(res.data.course);
-    //     }
-    //     fetchData();
-    // }, [])
     const fetchData = async () => {
         try {
             const res = await axios.get(`${BASE_URL}/admin/courses/${courseId}`, {
